@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<style>
+    body {
+        background-color: black;
+    }
+    a {
+        color: limegreen;
+        text-align: right;
+        font-family: OCRATTRegular;
+        font-size: 14px;
+    }
+    h1 {
+        color: limegreen;
+        text-align: center;
+        font-family: OCRATTRegular;
+    }
+
+    p {
+        border: dotted;
+        border-color: limegreen;
+        color: red;
+        text-align: center;
+        font-family: OCRATTRegular;
+        font-size: 20px;
+    }
+    input[type="text"]{
+        background-color: black;
+        font-family: OCRATTRegular;
+        color: limegreen;
+        border: solid;
+        border-width: medium;
+    }
+    button{
+        border: solid;
+        background-color:black;
+        border-style: solid;
+        border-color: limegreen;
+        color:green;
+    }
+</style>
+</head>
+<body>
+    <h1>Password Verification</h1>
+    <a href="index.html"><nav>Home</nav></a><br />
+    <label for="passOne" style="color:green">Enter Password:</label>
+    <input type="text" id="passOne" name="passOne" /><br /><br />
+    <label for="passTwo" style="color:green">Re-Enter Password</label>
+    <input type="text" id="passTwo" name="passTwo" /><br /><br />
+    <button onclick="CheckPass(document.getElementById('passOne').value, document.getElementById('passTwo').value)">Check Password</button>
+</body>
+</html>
+<script>
+    function CheckPass(passOne, passTwo) {
+        if (passOne == passTwo && passOne.length >= 8) {
+            alert("Password Accepted");
+        }
+        else if (passOne == passTwo && passOne.length < 8) {
+            alert("Password is too short...");
+        }
+        else {
+            alert("Passwords do not match...");
+        }
+    }
+</script>

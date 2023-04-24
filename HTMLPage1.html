@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+<style>
+body{
+    background-color: black;
+}
+h1 {
+    color: limegreen;
+    text-align: center;
+    font-family: OCRATTRegular;
+}
+p {
+    color: limegreen;
+    text-align: center;
+    font-family: OCRATTRegular;
+    font-size: 20px;
+}
+a {
+    color: limegreen;
+    text-align: right;
+    font-family: OCRATTRegular;
+    font-size: 14px;
+}
+info{
+    color: limegreen;
+    text-align: left;
+    font-family: OCRATTRegular;
+    font-size: 14px;
+}
+img {
+    border-radius: 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+iframe {
+    display: block;
+    margin: 0 auto;
+}
+.collapsible{
+    background-color : blue;
+    color: darkseagreen;
+    cursor: pointer;
+    padding: 18px;
+    width: 20%;
+    border: dashed;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+}
+.active, .collapsible:hover{
+    background-color: darkgray;
+}
+.content{
+    padding: 0 18px;
+    overflow: hidden;
+    background-color: black;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+</style>
+</head>
+</html>
+
+<body>
+    <h1> Enter the CSS </h1>
+    <a href="index.html"><p style="text-align:right">Home</p></a><br />
+    <info>
+        Name: Paul Dykes
+        <br />
+        E-Mail: pdykes@ku.edu
+    </info>
+    <hr />
+    <p>Picture of myself and my sister!</p>
+    <img src="Images/SelfPicture.jpg" alt="PaulAndSister" width="360" height="480" class="c" />
+    <hr />
+
+    <h1> Professional Information</h1>
+    <button type="button" class="collapsible">Show</button>
+    <div class="content">
+        <p>Work Experience:</p>
+        <p>2015-2020: USMC Radio Repairman/Micro-Miniature Repairman</p>
+        <p>2022-Present: KU Student Assistant at Multidisciplinary Research Building</p>
+    </div>
+
+    <h1> Relevant Completed Courses </h1>
+    <button type="button" class="collapsible">Show</button>
+    <div class="content">
+        <p>Programming 1/2 at Johnson County Community College</p>
+        <p>EECS 268 at The University of Kansas</p>
+        <p>EECS 140 at The University of Kansas</p>
+    </div>
+    <hr />
+    <h1> Here's a fun AI generated video!</h1>
+    <iframe width="1200" height="838" src="https://www.youtube.com/embed/iE39q-IKOzA" title="Harry Potter by Balenciaga" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+</body>
